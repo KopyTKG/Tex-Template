@@ -1,0 +1,115 @@
+\documentclass[12pt,a4paper]{report}
+
+\input{assets/packages.tex}
+
+%%% Údaje o~práci
+
+% Název práce v~jazyce práce (přesně podle zadání)
+\def\NazevPrace{Bezpočnost počítačových sítí}
+
+% Název práce v~angličtině
+\def\NazevPraceEN{\todo{Title}}
+
+% Typ práce
+\def\TypPrace{Seminární práce}
+
+% Jméno autora
+\def\AutorPrace{Martin Kopecký}
+
+
+
+% Rok odevzdání
+\def\RokOdevzdani{\todo{?}}
+
+% Název katedry nebo ústavu, kde byla práce oficiálně zadána
+% (dle Organizační struktury MFF UK, případně plný název pracoviště mimo MFF)
+\def\Katedra{\todo{Katedra}}
+\def\KatedraEN{\todo{Department}}
+
+% Jedná se o~katedru (department) nebo o~ústav (institute)?
+\def\TypPracoviste{Katedra}
+\def\TypPracovisteEN{Department}
+
+% Vedoucí práce: Jméno a~příjmení s~tituly
+\def\Vedouci{\todo{Vedouci}}
+
+% Pracoviště vedoucího (opět dle Organizační struktury MFF)
+\def\KatedraVedouciho{\todo{Katedra}}
+\def\KatedraVedoucihoEN{\todo{Department}}
+
+% Studijní program a~obor
+\def\StudijniProgram{Aplikovaná informatika}
+\def\StudijniObor{Informační systémy}
+
+% Nepovinné poděkování (vedoucímu práce, konzultantovi, tomu, kdo
+% zapůjčil software, literaturu apod.)
+\def\Podekovani{%
+\todo{Doplnit poděkování}
+\input{acknowledgements.txt}
+}
+
+% Abstrakt (doporučený rozsah cca 80-200 slov; nejedná se o~zadání práce)
+\def\Abstrakt{%
+\todo{Doplnit abstrakt (česky)}
+\input{abstract_cz.txt}
+}
+\def\AbstraktEN{%
+\todo{Doplnit abstrakt (anglicky)}
+\input{abstract_en.txt}
+}
+
+% 3 až 5 klíčových slov (doporučeno), každé uzavřeno ve složených závorkách
+\def\KlicovaSlova{%
+{}, {klicova slova}
+}
+\def\KlicovaSlovaEN{%
+{keywords}
+}
+
+%% Balíček hyperref, kterým jdou vyrábět klikací odkazy v~PDF,
+%% ale hlavně ho používáme k~uložení metadat do PDF (včetně obsahu).
+%% Většinu nastavítek přednastaví balíček pdfx.
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+
+%% Definice různých užitečných maker (viz popis uvnitř souboru)
+\input{assets/commands.tex}
+
+%% Titulní strana a~různé povinné informační strany
+\begin{document}
+\include{components/titlepage.tex}
+
+%%% Strana s automaticky generovaným obsahem bakalářské práce
+
+\tableofcontents
+
+%%% Jednotlivé kapitoly práce jsou pro přehlednost uloženy v~samostatných souborech
+\include{\chapterpath{00}/ch00_predmluva.tex}
+%\include{\chapterpath{01}/ch01_uvod_do_fraktalu.tex}
+
+%%% Seznam použité literatury
+%\include{\literaturepath/literature.tex}
+
+%%% Obrázky v~bakalářské práci
+%%% (pokud jich je malé množství, obvykle není třeba seznam uvádět)
+\listoffigures
+
+%%% Tabulky v~bakalářské práci (opět nemusí být nutné uvádět)
+%%% U matematických prací může být lepší přemístit seznam tabulek na začátek práce.
+% \listoftables
+
+%%% Přílohy k~bakalářské práci, existují-li. Každá příloha musí být alespoň jednou
+%%% odkazována z vlastního textu práce. Přílohy se číslují.
+%%%
+%%% Do tištěné verze se spíše hodí přílohy, které lze číst a~prohlížet (dodatečné
+%%% tabulky a~grafy, různé textové doplňky, ukázky výstupů z počítačových programů,
+%%% apod.). Do elektronické verze se hodí přílohy, které budou spíše používány
+%%% v~elektronické podobě než čteny (zdrojové kódy programů, datové soubory,
+%%% interaktivní grafy apod.). Elektronické přílohy se nahrávají do SISu a~lze
+%%% je také do práce vložit na CD/DVD. Povolené formáty souborů specifikuje
+%%% opatření rektora č. 72/2017.
+
+\appendix
+
+\openright
+\end{document}
