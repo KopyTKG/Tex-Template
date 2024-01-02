@@ -1,98 +1,104 @@
 \documentclass[12pt,a4paper]{report}
 
-\input{assets/packages.tex}
+%% Vložení užitečných balíčků
+\input{assets/packages}
+
+%% Definice různých užitečných maker (viz popis uvnitř souboru)
+\input{assets/commands}
 
 %%% Údaje o~práci
 
-% Název práce v~jazyce práce (přesně podle zadání)
-\def\NazevPrace{Bezpočnost počítačových sítí}
+%%% Název práce v~jazyce práce (přesně podle zadání)
+\def\NazevPrace{Virtualizační platforma Proxmox}
 
-% Název práce v~angličtině
+%%% Název práce v~angličtině
 \def\NazevPraceEN{\todo{Title}}
 
-% Typ práce
+%%% Typ práce
 \def\TypPrace{Seminární práce}
 
-% Jméno autora
+%%% Jméno autora
 \def\AutorPrace{Martin Kopecký}
 
 
 
-% Rok odevzdání
-\def\RokOdevzdani{\todo{?}}
+%%% Rok odevzdání
+\def\RokOdevzdani{2024}
 
-% Název katedry nebo ústavu, kde byla práce oficiálně zadána
-% (dle Organizační struktury MFF UK, případně plný název pracoviště mimo MFF)
-\def\Katedra{\todo{Katedra}}
-\def\KatedraEN{\todo{Department}}
+%%% Název katedry nebo ústavu, kde byla práce oficiálně zadána
+%%% (dle Organizační struktury MFF UK, případně plný název pracoviště mimo MFF)
+% \def\Katedra{\todo{Katedra}}
+% \def\KatedraEN{\todo{Department}}
 
 % Jedná se o~katedru (department) nebo o~ústav (institute)?
-\def\TypPracoviste{Katedra}
-\def\TypPracovisteEN{Department}
+% \def\TypPracoviste{Katedra}
+% \def\TypPracovisteEN{Department}
 
 % Vedoucí práce: Jméno a~příjmení s~tituly
-\def\Vedouci{\todo{Vedouci}}
+% \def\Vedouci{\todo{Vedouci}}
 
 % Pracoviště vedoucího (opět dle Organizační struktury MFF)
-\def\KatedraVedouciho{\todo{Katedra}}
-\def\KatedraVedoucihoEN{\todo{Department}}
+% \def\KatedraVedouciho{\todo{Katedra}}
+% \def\KatedraVedoucihoEN{\todo{Department}}
 
 % Studijní program a~obor
 \def\StudijniProgram{Aplikovaná informatika}
 \def\StudijniObor{Informační systémy}
 
-% Nepovinné poděkování (vedoucímu práce, konzultantovi, tomu, kdo
-% zapůjčil software, literaturu apod.)
-\def\Podekovani{%
-\todo{Doplnit poděkování}
-\input{acknowledgements.txt}
-}
+%%% Nepovinné poděkování (vedoucímu práce, konzultantovi, tomu, kdo
+%%% zapůjčil software, literaturu apod.)
+%\def\Podekovani{%
+%\todo{Doplnit poděkování}
+%\input{acknowledgements.txt}
+%}
 
-% Abstrakt (doporučený rozsah cca 80-200 slov; nejedná se o~zadání práce)
-\def\Abstrakt{%
-\todo{Doplnit abstrakt (česky)}
-\input{abstract_cz.txt}
-}
-\def\AbstraktEN{%
-\todo{Doplnit abstrakt (anglicky)}
-\input{abstract_en.txt}
-}
+%%% Abstrakt (doporučený rozsah cca 80-200 slov; nejedná se o~zadání práce)
+%\def\Abstrakt{%
+%\todo{Doplnit abstrakt (česky)}
+%\input{abstract_cz.txt}
+%}
+%\def\AbstraktEN{%
+%\todo{Doplnit abstrakt (anglicky)}
+%\input{abstract_en.txt}
+%}
 
-% 3 až 5 klíčových slov (doporučeno), každé uzavřeno ve složených závorkách
+%%% 3 až 5 klíčových slov (doporučeno), každé uzavřeno ve složených závorkách
 \def\KlicovaSlova{%
 {}, {klicova slova}
 }
-\def\KlicovaSlovaEN{%
-{keywords}
-}
+%\def\KlicovaSlovaEN{%
+%{keywords}
+%}
 
-%% Balíček hyperref, kterým jdou vyrábět klikací odkazy v~PDF,
-%% ale hlavně ho používáme k~uložení metadat do PDF (včetně obsahu).
-%% Většinu nastavítek přednastaví balíček pdfx.
+%%% Balíček hyperref, kterým jdou vyrábět klikací odkazy v~PDF,
+%%% ale hlavně ho používáme k~uložení metadat do PDF (včetně obsahu).
+%%% Většinu nastavítek přednastaví balíček pdfx.
 \hypersetup{unicode}
 \hypersetup{breaklinks=true}
 
-%% Definice různých užitečných maker (viz popis uvnitř souboru)
-\input{assets/commands.tex}
+
+\renewcommand{\bibname}{Seznam použité literatury}
+\addbibresource{99-literature/literature.bib}
 
 %% Titulní strana a~různé povinné informační strany
 \begin{document}
-\include{components/titlepage.tex}
+\include{titlepage}
 
 %%% Strana s automaticky generovaným obsahem bakalářské práce
 
 \tableofcontents
 
 %%% Jednotlivé kapitoly práce jsou pro přehlednost uloženy v~samostatných souborech
-\include{\chapterpath{00}/ch00_predmluva.tex}
-%\include{\chapterpath{01}/ch01_uvod_do_fraktalu.tex}
+\include{00/predmluva}
+\include{01/historie}
+% \include{\chapterpath{01}/ch01_limity.tex}
 
 %%% Seznam použité literatury
-%\include{\literaturepath/literature.tex}
+\include{99-literature/literature}
 
 %%% Obrázky v~bakalářské práci
 %%% (pokud jich je malé množství, obvykle není třeba seznam uvádět)
-\listoffigures
+%\listoffigures
 
 %%% Tabulky v~bakalářské práci (opět nemusí být nutné uvádět)
 %%% U matematických prací může být lepší přemístit seznam tabulek na začátek práce.

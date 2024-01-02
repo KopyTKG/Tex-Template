@@ -26,6 +26,9 @@
 
 \usepackage[pdfa,colorlinks=false,urlcolor=black,bookmarksopen=true]{hyperref} 	% Záložky v~souboru
 
+% Citace dle ČSN 690
+\usepackage[backend=biber, style=iso-numeric]{biblatex}
+
 %% Vytváříme PDF/A-2u
 \usepackage[a-2u]{pdfx}
 
@@ -36,22 +39,18 @@
 \usepackage{textcomp}
 
 %% Použité kódování znaků: obvykle latin2, cp1250 nebo utf8:
-\usepackage[utf8]{inputenc}
-\usepackage{csquotes}
-\MakeOuterQuote{"}
+%\usepackage[utf8]{inputenc}
+%\usepackage{csquotes}
+%\MakeOuterQuote{"}
 
 %%% Další užitečné balíčky (jsou součástí běžných distribucí LaTeXu)
-\usepackage{amsmath}        % rozšíření pro sazbu matematiky
-\usepackage{amsfonts}       % matematické fonty
-\usepackage{amsthm}         % sazba vět, definic apod.
-\usepackage{amssymb}
 \usepackage{bbding}         % balíček s nejrůznějšími symboly
 			    % (čtverečky, hvězdičky, tužtičky, nůžtičky, ...)
 \usepackage{bm}             % tučné symboly (příkaz \bm)
 \usepackage{graphicx}       % vkládání obrázků
 \usepackage{fancyvrb}       % vylepšené prostředí pro strojové písmo
 \usepackage{indentfirst}    % zavede odsazení 1. odstavce kapitoly
-\usepackage[numbers]{natbib}         % zajištuje možnost odkazovat na literaturu
+%\usepackage[numbers]{natbib}         % zajištuje možnost odkazovat na literaturu
 			    % stylem AUTOR (ROK), resp. AUTOR [ČÍSLO]
 \usepackage[nottoc]{tocbibind} % zajistí přidání seznamu literatury,
                             % obrázků a~tabulek do obsahu
@@ -69,9 +68,24 @@
 \usepackage{wrapfig}		% plovoucí obrázky nalevo/napravo
 \usepackage{pgfplots}
 \usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{array}
 \pgfplotsset{compat=1.15}
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
 
 \justifying
-\graphicspath{{./components/images/}}
+\graphicspath{{98-images/}}
+
+% Nastavení okrajů dle ČSN 6910
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+
+
+
+% Česká lokalizace
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Písmo
+\usepackage{lmodern}

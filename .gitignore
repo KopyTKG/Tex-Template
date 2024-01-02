@@ -1,7 +1,13 @@
 *.aux
+*.dvi
+*.toc
 *.lof
 *.log
+*.lot
 *.out
-*.toc
+*.bbl
+*.blg
+*.bcf
 *.xmpi
-
+*.synctex.gz
+*.run.xml

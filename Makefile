@@ -1,5 +1,5 @@
 TEXCOMPILER = pdflatex
-BIBCOMPILER = bibtex
+BIBCOMPILER = biber
 
 DOCNAME = Master
 
@@ -11,7 +11,7 @@ all-no-bibtex: compile-no-bibtex clean
 
 compile: ${DOCNAME}.tex
 	${TEXCOMPILER} ${DOCNAME}.tex
-	${BIBCOMPILER} ./components/literature/literature
+	${BIBCOMPILER} ${DOCNAME}
 	${TEXCOMPILER} ${DOCNAME}.tex
 	${TEXCOMPILER} ${DOCNAME}.tex
 
@@ -20,4 +20,4 @@ compile-no-bibtex:
 	${TEXCOMPILER} ${DOCNAME}.tex
 
 clean:
-	find . -type f -name '*.(aux|dvi|aux|toc|lof|lot|out|bbl|blg|xmpi|synctex.gz)' -delete
+	find . -type f \( -name '*.aux' -o -name '*.dvi' -o -name '*.toc' -o -name '*.lof' -o -name '*.log' -o -name '*.lot' -o -name '*.out' -o -name '*.bbl' -o -name '*.blg' -o -name '*.bcf' -o -name '*.xmpi' -o -name '*.synctex.gz' -o -name '*.run.xml' \) -exec rm {} \;

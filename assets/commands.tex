@@ -1,59 +1,24 @@
 
-
-
-% Diameter symbol settings
-\DeclareRobustCommand{\slashcirc}{{\mathpalette\doslashcirc\relax}}
-\makeatletter
-\newcommand{\doslashcirc}[2]{
-	\sbox\z@{$#1\m@th\circ$}
-	\setlength\unitlength{\wd\z@}
-	\begin{picture}(1,1)
-		\roundcap
-		\put(0,0){\box\z@}
-		\put(0,0){\line(1,1){1}}
-	  \end{picture}%
+% Toto makro definuje kapitolu, která není očíslovaná, ale je uvedena v~obsahu.
+\def\chapwithtoc#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
 }
-\makeatother
 
-% Symbol průměru
-\newcommand{\diameter}[2]{$\slashcirc #1$#2}
 
-% Matematické symboly
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\defin}{\(=_{df}\)}
-\def\doubleunderline#1{\underline{\underline{#1}}}
-
-% Limita
-\newcommand{\limit}[1]{\lim_{n\rightarrow\infty}#1}
-
-% Derivace 1 řádu
-\newcommand{\derf}[1]{#1'}
-
-% Derivace 2 řádu
-\newcommand{\ders}[1]{#1''}
+\DefineBibliographyStrings{czech}{ % Definování vlastního názvu pro bibliografii v češtině
+  bibliography = Seznam použité literatury,
+}
 
 % TODO
 \newcommand{\todo}[1]{\textcolor{red}{(\noindent TODO: #1.)}}
 
-% Symbol stupně
-\newcommand{\degree}[1]{#1^\circ}
 
 % Celá jména
 \newcommand{\name}[1]{\mbox{\textsc{#1}}}
 
-% Logické operátory
-\renewcommand{\implies}{\Longrightarrow}
-\renewcommand{\impliedby}{\Longleftarrow}
-\renewcommand{\iff}{\Longleftrightarrow}
 
 % Cesty
-\newcommand{\chapterpath}[1]{components/ch#1}
-\newcommand{\sectionpath}[1]{components/ch#1/sections}
-\newcommand{\literaturepath}{components/literature}
 \newcommand{\appendixpath}{components/appendix}
 
 % Images
@@ -68,22 +33,6 @@
 
 \DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small, frame=single}
 
-%%% Makra pro definice, věty, tvrzení, příklady, ... (vyžaduje baliček amsthm)
-
-\theoremstyle{plain}
-\newtheorem{theorem}{Věta}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Tvrzení}
-\newtheorem{corollary}[theorem]{Důsledek}
-\newtheorem*{proposition*}{Tvrzení}
-
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definice}
-\newtheorem{example}[theorem]{Příklad}
-\newtheorem{remark}[theorem]{Poznámka}
-\newtheorem{convention}[theorem]{Úmluva}
-\newtheorem{denoting}[theorem]{Značení}
-
 % Zapne černé "slimáky" na koncích řádků, které přetekly, abychom si
 % jich lépe všimli.
 \overfullrule=1mm
@@ -94,8 +43,3 @@
 
 \setlength{\parskip}{0.3em}
 
-% Toto makro definuje kapitolu, která není očíslovaná, ale je uvedena v~obsahu.
-\def\chapwithtoc#1{
-\chapter*{#1}
-\addcontentsline{toc}{chapter}{#1}
-}
