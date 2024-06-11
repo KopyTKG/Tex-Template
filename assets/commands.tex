@@ -1,11 +1,4 @@
 
-% Toto makro definuje kapitolu, která není očíslovaná, ale je uvedena v~obsahu.
-\def\chapwithtoc#1{
-\chapter*{#1}
-\addcontentsline{toc}{chapter}{#1}
-}
-
-
 \DefineBibliographyStrings{czech}{ % Definování vlastního názvu pro bibliografii v češtině
   bibliography = Seznam použité literatury,
 }
@@ -13,10 +6,8 @@
 % TODO
 \newcommand{\todo}[1]{\textcolor{red}{(\noindent TODO: #1.)}}
 
-
 % Celá jména
 \newcommand{\name}[1]{\mbox{\textsc{#1}}}
-
 
 % Cesty
 \newcommand{\appendixpath}{components/appendix}
@@ -42,4 +33,19 @@
 \righthyphenmin=2
 
 \setlength{\parskip}{0.3em}
+
+% Customizing chapters to have a specific look
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}{\thechapter.}{1cm}{}
+\titlespacing{\chapter}{0cm}{2mm}{3mm}
+
+% Customizing sections similarly
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1cm}{}
+\titlespacing{\section}{0cm}{2mm}{3mm}
+
+\makeatletter
+\newcommand\openright{\cleardoublepage}
+\makeatother
+
 

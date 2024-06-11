@@ -9,10 +9,7 @@
 %%% Údaje o~práci
 
 %%% Název práce v~jazyce práce (přesně podle zadání)
-\def\NazevPrace{Virtualizační platforma Proxmox}
-
-%%% Název práce v~angličtině
-\def\NazevPraceEN{\todo{Title}}
+\def\NazevPrace{OLAP a ClickHouse}
 
 %%% Typ práce
 \def\TypPrace{Seminární práce}
@@ -25,42 +22,10 @@
 %%% Rok odevzdání
 \def\RokOdevzdani{2024}
 
-%%% Název katedry nebo ústavu, kde byla práce oficiálně zadána
-%%% (dle Organizační struktury MFF UK, případně plný název pracoviště mimo MFF)
-% \def\Katedra{\todo{Katedra}}
-% \def\KatedraEN{\todo{Department}}
-
-% Jedná se o~katedru (department) nebo o~ústav (institute)?
-% \def\TypPracoviste{Katedra}
-% \def\TypPracovisteEN{Department}
-
-% Vedoucí práce: Jméno a~příjmení s~tituly
-% \def\Vedouci{\todo{Vedouci}}
-
-% Pracoviště vedoucího (opět dle Organizační struktury MFF)
-% \def\KatedraVedouciho{\todo{Katedra}}
-% \def\KatedraVedoucihoEN{\todo{Department}}
-
 % Studijní program a~obor
 \def\StudijniProgram{Aplikovaná informatika}
 \def\StudijniObor{Informační systémy}
 
-%%% Nepovinné poděkování (vedoucímu práce, konzultantovi, tomu, kdo
-%%% zapůjčil software, literaturu apod.)
-%\def\Podekovani{%
-%\todo{Doplnit poděkování}
-%\input{acknowledgements.txt}
-%}
-
-%%% Abstrakt (doporučený rozsah cca 80-200 slov; nejedná se o~zadání práce)
-%\def\Abstrakt{%
-%\todo{Doplnit abstrakt (česky)}
-%\input{abstract_cz.txt}
-%}
-%\def\AbstraktEN{%
-%\todo{Doplnit abstrakt (anglicky)}
-%\input{abstract_en.txt}
-%}
 
 %%% 3 až 5 klíčových slov (doporučeno), každé uzavřeno ve složených závorkách
 \def\KlicovaSlova{%
@@ -78,7 +43,7 @@
 
 
 \renewcommand{\bibname}{Seznam použité literatury}
-\addbibresource{99-literature/literature.bib}
+\addbibresource{./literature/literature.bib}
 
 %% Titulní strana a~různé povinné informační strany
 \begin{document}
@@ -89,33 +54,11 @@
 \tableofcontents
 
 %%% Jednotlivé kapitoly práce jsou pro přehlednost uloženy v~samostatných souborech
-\include{00/predmluva}
-\include{01/historie}
-% \include{\chapterpath{01}/ch01_limity.tex}
+\include{./ch01/temp}
+
 
 %%% Seznam použité literatury
-\include{99-literature/literature}
-
-%%% Obrázky v~bakalářské práci
-%%% (pokud jich je malé množství, obvykle není třeba seznam uvádět)
-%\listoffigures
-
-%%% Tabulky v~bakalářské práci (opět nemusí být nutné uvádět)
-%%% U matematických prací může být lepší přemístit seznam tabulek na začátek práce.
-% \listoftables
-
-%%% Přílohy k~bakalářské práci, existují-li. Každá příloha musí být alespoň jednou
-%%% odkazována z vlastního textu práce. Přílohy se číslují.
-%%%
-%%% Do tištěné verze se spíše hodí přílohy, které lze číst a~prohlížet (dodatečné
-%%% tabulky a~grafy, různé textové doplňky, ukázky výstupů z počítačových programů,
-%%% apod.). Do elektronické verze se hodí přílohy, které budou spíše používány
-%%% v~elektronické podobě než čteny (zdrojové kódy programů, datové soubory,
-%%% interaktivní grafy apod.). Elektronické přílohy se nahrávají do SISu a~lze
-%%% je také do práce vložit na CD/DVD. Povolené formáty souborů specifikuje
-%%% opatření rektora č. 72/2017.
-
-\appendix
+\include{./literature/literature}
 
 \openright
 \end{document}

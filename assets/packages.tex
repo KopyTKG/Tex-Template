@@ -1,91 +1,37 @@
-%%% Hlavní soubor. Zde se definují základní parametry a~odkazuje se na ostatní části. %%%
-
-%% Verze pro jednostranný tisk:
-% Okraje: levý 40mm, pravý 25mm, horní a~dolní 25mm
-% (ale pozor, LaTeX si sám přidává 1in)
-\setlength\textwidth{145mm}
-\setlength\textheight{247mm}
-\setlength\oddsidemargin{15mm}
-\setlength\evensidemargin{15mm}
-\setlength\topmargin{0mm}
-\setlength\headsep{0mm}
-\setlength\headheight{0mm}
-% \openright zařídí, aby následující text začínal na pravé straně knihy
-\let\openright=\clearpage
-
-%% Pokud tiskneme oboustranně:
-% \documentclass[12pt,a4paper,twoside,openright]{report}
-% \setlength\textwidth{145mm}
-% \setlength\textheight{247mm}
-% \setlength\oddsidemargin{14.2mm}
-% \setlength\evensidemargin{0mm}
-% \setlength\topmargin{0mm}
-% \setlength\headsep{0mm}
-% \setlength\headheight{0mm}
-% \let\openright=\cleardoublepage
-
-\usepackage[pdfa,colorlinks=false,urlcolor=black,bookmarksopen=true]{hyperref} 	% Záložky v~souboru
-
-% Citace dle ČSN 690
-\usepackage[backend=biber, style=iso-numeric]{biblatex}
-
-%% Vytváříme PDF/A-2u
-\usepackage[a-2u]{pdfx}
-
-%% Přepneme na českou sazbu a~fonty Latin Modern
-\usepackage[czech]{babel}
-\usepackage{lmodern}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-
-%% Použité kódování znaků: obvykle latin2, cp1250 nebo utf8:
-%\usepackage[utf8]{inputenc}
-%\usepackage{csquotes}
-%\MakeOuterQuote{"}
-
-%%% Další užitečné balíčky (jsou součástí běžných distribucí LaTeXu)
-\usepackage{bbding}         % balíček s nejrůznějšími symboly
-			    % (čtverečky, hvězdičky, tužtičky, nůžtičky, ...)
-\usepackage{bm}             % tučné symboly (příkaz \bm)
-\usepackage{graphicx}       % vkládání obrázků
-\usepackage{fancyvrb}       % vylepšené prostředí pro strojové písmo
-\usepackage{indentfirst}    % zavede odsazení 1. odstavce kapitoly
-%\usepackage[numbers]{natbib}         % zajištuje možnost odkazovat na literaturu
-			    % stylem AUTOR (ROK), resp. AUTOR [ČÍSLO]
-\usepackage[nottoc]{tocbibind} % zajistí přidání seznamu literatury,
-                            % obrázků a~tabulek do obsahu
-\usepackage{icomma}         % inteligetní čárka v~matematickém módu
-\usepackage{dcolumn}        % lepší zarovnání sloupců v~tabulkách
-\usepackage{booktabs}       % lepší vodorovné linky v~tabulkách
-\usepackage{paralist}       % lepší enumerate a~itemize
-\usepackage{xcolor}         % barevná sazba
-\usepackage{float}
-\usepackage{ifthen}
-\usepackage{cancel}
-\usepackage{enumitem}
-\usepackage{ragged2e}
-\usepackage{needspace}		
-\usepackage{wrapfig}		% plovoucí obrázky nalevo/napravo
-\usepackage{pgfplots}
-\usepackage{subcaption}
-\usepackage{amsmath}
-\usepackage{array}
-\pgfplotsset{compat=1.15}
-\usepackage{mathrsfs}
-\usetikzlibrary{arrows}
-
-\justifying
-\graphicspath{{98-images/}}
-
-% Nastavení okrajů dle ČSN 6910
+% Geometry and page layout
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
 
+% Fonts and locale
+\usepackage{fontspec}
+% \usepackage[czech]{babel}
+\setmainfont{Geist.ttf}[
+  Path = ./assets/fonts/,        % Adjust path to your font directory
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+]
 
 
-% Česká lokalizace
+% Document enhancements
+\usepackage[pdfa, colorlinks=false, urlcolor=black, bookmarksopen=true]{hyperref}
+\usepackage[backend=biber, style=iso-numeric]{biblatex}
+\usepackage{titlesec}
+
+% Graphics and tables
+\usepackage{graphicx, xcolor, booktabs, wrapfig}
+\graphicspath{{images/}}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows}
+
+% Text and math formatting
+\usepackage{amsmath, bm, mathrsfs}
+\usepackage{microtype, paralist, listings, textcomp, enumitem, fancyvrb, indentfirst, tocbibind, float, cancel, ragged2e, dcolumn}
+\usepackage{needspace, subcaption}
 \usepackage[czech]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 
-% Písmo
-\usepackage{lmodern}
+\justifying
+\lstset{upquote=true}
+
+% Miscellaneous
+\usepackage{lipsum} % For placeholder text
